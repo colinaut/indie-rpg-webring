@@ -52,8 +52,12 @@ class WebringBanner extends HTMLElement {
         border-bottom: var(--wr-border);
     }
 
-    .description {
+    .desc {
         flex: 1 0 0;
+        line-height: 1.1;
+    }
+    .desc span {
+        font-size: 0.85em;
     }
 
     .image {
@@ -64,7 +68,7 @@ class WebringBanner extends HTMLElement {
 
     .title {
         margin: 0;
-        font-size: 1.25rem;
+        font-size: 1.2em;
         font-weight: bold;
         line-height: 1.2;
     }
@@ -78,10 +82,10 @@ class WebringBanner extends HTMLElement {
         justify-content: center;
         border-radius: 50%;
         border: 2px solid #DDD;
-        width: 1.25rem;
-        height: 1.25rem;
-        line-height: 1.25rem;
-        font-size: 0.75rem;
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.25em;
+        font-size: 0.75em;
         text-align: center;
         color: #666;
         text-decoration: none;
@@ -121,7 +125,7 @@ class WebringBanner extends HTMLElement {
                 class="prev" 
                 aria-label="Go to previous site"
                 part="prev"
-              >&#8610; Previous</a>
+              >&#8610; Prev</a>
     <a
                 href="${this.url}/random"
                 class="random" 
@@ -145,7 +149,7 @@ class WebringBanner extends HTMLElement {
           <div>
     <div class="header">
         <img class="image" src="${this.image}" alt="" part="image"/>
-        <div class="description" part="desc">
+        <div class="desc" part="desc">
             <span part="prefix">This site is part of</span>
             <h3 class="title" part="title">
                 <a href="${this.url}">${this.ringtitle}</a>
@@ -172,6 +176,9 @@ class WebringBanner2 extends WebringBanner {
         return `
           ${this.getStyles()}
           <style>
+    :host {
+        font-size: 90%;
+    }
     .header {
         padding: 0.6rem 0.8rem;
     }
@@ -185,7 +192,7 @@ class WebringBanner2 extends WebringBanner {
         border-top: var(--wr-border);
     }
     .members {
-        font-size: 1rem;
+        font-size: 0.8em;
         font-weight: 400;
         flex-grow: 1;
         white-space: nowrap;
@@ -199,10 +206,10 @@ class WebringBanner2 extends WebringBanner {
 
 <div class="header">
     <img class="image" src="${this.image}" alt="" part="image"/>
-    <div class="description" part="desc">
+    <div class="desc" part="desc">
         <h3 class="title" part="title">
             <a href="${this.url}">${this.ringtitle}</a>
-            <span class="members" part="members">(${this.membercount} Members)</span>
+            <span class="members" part="members">(${this.membercount})</span>
             <a class="info" href="https://en.wikipedia.org/wiki/Webring" title="What's this?" part="info">?</a>
         </h3>
 
