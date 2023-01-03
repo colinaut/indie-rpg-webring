@@ -4,5 +4,10 @@
         "url": "https://www.mirthpeddlers.com/",
         "feed": "https://www.mirthpeddlers.com/rss.xml",
         "social": "https://dice.camp/@colinaut"
+    },
+    {
+        "title": "Tabletop Hotdish",
+        "url": "https://www.tabletophotdish.com/",
+        "social": "https://dice.camp/@tabletophotdish"
     }
 ]
