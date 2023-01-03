@@ -27,7 +27,9 @@
                 <li class="webring__member">
                     <a href="{{ member.url }}" class="webring__link">{{ member.title }}</a>
                     <a href="{{ member.social }}" class="webring__link webring__social">{{ member.social }}</a>
-                    <a href="{{ member.feed }}" class="webring__link webring__rss">RSS</a>
+                    {% if member.feed %}
+                        <a href="{{ member.feed }}" class="webring__link webring__rss">RSS</a>
+                    {% endif %}
                 </li>
             {% endfor %}
         </ol>
