@@ -15,23 +15,41 @@
             <h2 class="h3">Members ({{ members | length }})</h2>
             <a href="/feeds.xml">RSS Feeds</a>
         </div>
-        <ol class="webring__memberlist-header">
-            <li class="webring__member">
-                <h3>Web Site</h3>
-                <h3>Social Media</h3>
-            </li>
-        </ol>
-
-        <ol class="webring__memberlist">
-            {% for member in members %}
-                <li class="webring__member">
-                    <a href="{{ member.url }}" class="webring__link">{{ member.title }}</a>
-                    <a href="{{ member.social }}" class="webring__link webring__social">{{ member.social }}</a>
-                    {% if member.feed %}
-                        <a href="{{ member.feed }}" class="webring__link webring__rss">RSS</a>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ol>
+        <table class="webring__memberlist-table">
+            <thead>
+                <tr>
+                    <th>Web Site</th>
+                    <th class="webring__memberlist-table-header-rss">RSS</th>
+                    <th>Social Media</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in members %}
+                    <tr>
+                        <td>
+                            <a href="{{ member.url }}" class="webring__link">{{ member.title }}</a>
+                        </td>
+                        <td>
+                            {% if member.feed %}
+                                <a href="{{ member.feed }}" class="webring__link webring__rss">
+                                    <svg viewbox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="rss-icon" >
+                                        <title>RSS</title>
+                                        <path d="M76.8 0C51.2 0 33.6 17.6 33.6 43.2s17.6 43.2 43.2 43.2c473.6 0 862.4 384 862.4 852.8 0 25.6 17.6 43.2 43.2 43.2s43.2-17.6 43.2-43.2C1024 422.4 596.8 0 76.8 0zM76.8 225.6c-25.6 0-43.2 17.6-43.2 43.2s17.6 43.2 43.2 43.2c353.6 0 644.8 281.6 644.8 627.2 0 25.6 17.6 43.2 43.2 43.2s43.2-17.6 43.2-43.2c-1.6-393.6-329.6-713.6-731.2-713.6zM76.8 422.4c-25.6 0-43.2 17.6-43.2 43.2s17.6 43.2 43.2 43.2c243.2 0 440 192 440 427.2 0 25.6 17.6 43.2 43.2 43.2s43.2-17.6 43.2-43.2c-6.4-283.2-240-513.6-526.4-513.6zM76.8 627.2c-25.6 0-43.2 17.6-43.2 43.2s17.6 43.2 43.2 43.2c128 0 230.4 102.4 230.4 225.6 0 25.6 17.6 43.2 43.2 43.2s43.2-17.6 43.2-43.2c-4.8-176-145.6-312-316.8-312zM115.2 793.6c-64 0-115.2 51.2-115.2 115.2C0 968 51.2 1024 115.2 1024s115.2-51.2 115.2-115.2-51.2-115.2-115.2-115.2z m0 145.6c-17.6 0-30.4-17.6-30.4-30.4s12.8-30.4 30.4-30.4 30.4 12.8 30.4 30.4c0 17.6-12.8 30.4-30.4 30.4z"></path>
+                                    </svg>
+                                </a>
+                            {% endif %}
+                        </td>
+                        <td class="webring__social-td">
+                            {% if member.social %}
+                                <div class="webring__social-wrap">
+                                    <span class="webring__social-prefix">Social: </span>
+                                    <a href="{{ member.social }}" class="webring__social no-underline">{{ member.social }}</a>
+                                </div>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </article>
