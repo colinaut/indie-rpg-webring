@@ -1,10 +1,19 @@
 ---
 layout: base 
 ---
-
-<div class="markdown">
-    {{ content | safe}}
-    <div>
-        <a href="/">&#8610; Back to Home</a>
+<main>
+    <div class="webring__header markdown">
+        <h1 class="webring__title">
+            <a href="/" class="site-title">{{ meta.title }}</a>
+        </h1>
+        <p>{{ meta.description }}</p>
     </div>
-</div>
+    <article>
+        <div class="markdown">
+            {{ content | safe}}
+            <div>
+                <a href="/">&#8610; Back to Home</a>
+            </div>
+        </div>
+    </article>
+</main>
