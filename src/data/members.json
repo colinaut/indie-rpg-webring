@@ -39,5 +39,11 @@
     {
         "title": "Ardens Ludere",
         "url": "http://www.ardens.org/"
+    },
+    {
+        "title": "Bloodthorn Press",
+        "url": "https://bloodthornpress.com/",
+        "feed": "https://bloodthornpress.com/feed/",
+        "social": "https://dice.camp/@jburneko"
     }
 ]
