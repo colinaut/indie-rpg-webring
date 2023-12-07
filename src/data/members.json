@@ -49,5 +49,10 @@
     {
         "title": "Simon Carryer dot com",
         "url": "https://simoncarryer.com/rpgs.html"
+    },{
+        "title": "drrnbrcks",
+        "url": "https://drrnbrcks.wordpress.com",
+        "feed": "https://drrnbrcks.wordpress.com/rss",
+        "social": "https://dice.camp/@drrnbrcks"
     }
 ]
